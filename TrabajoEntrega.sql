@@ -78,6 +78,18 @@ insert into Delivery (id, tipo) values (2, 'auto');
 insert into Delivery (id, tipo) values (3, 'bicicleta');
 insert into Delivery (id, tipo) values (4, 'retiro');
 
+-- Creacion vistas
 
+select * from productos where precio < 200;
+select * from delivery where tipo = 'auto';
+select * from consumidores where direccion = 'florida';
+
+select * from Restaurante T1
+INNER JOIN Productos T2
+on T1.Producto = T2.id;
+
+select * from Productos T1
+INNER JOIN Delivery T2
+on T1.Tipo_delivery = T2.id;
 
 
