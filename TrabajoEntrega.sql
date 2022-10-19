@@ -80,16 +80,19 @@ insert into Delivery (id, tipo) values (4, 'retiro');
 
 -- Creacion vistas
 
-select * from productos where precio < 200;
-select * from delivery where tipo = 'auto';
-select * from consumidores where direccion = 'florida';
+create view precios as
+select precio from productos;
 
-select * from Restaurante T1
-INNER JOIN Productos T2
-on T1.Producto = T2.id;
+create view deliverys as
+select tipo from Delivery;
 
-select * from Productos T1
-INNER JOIN Delivery T2
-on T1.Tipo_delivery = T2.id;
+create view tiposproductos as
+select tipo from Productos;
+
+create view nombresrestaurantes as
+select NombreR from Restaurante;
+
+create view pagos as
+select tipo_pago from Forma_De_Pago;
 
 
